@@ -57,3 +57,18 @@ setTimeout(() => {
 }, 5000);
 
 
+//getting input nodes
+const inputDOM = document.querySelectorAll('div#wrapper input');
+
+//getting btn submit
+const btnSubmit = document.getElementById('btn-submit');
+
+btnSubmit.addEventListener('click',function (e){
+
+    inputDOM.forEach((element) => {
+
+        element.innerHTML;
+
+    });
+
+});
