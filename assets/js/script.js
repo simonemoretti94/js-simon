@@ -1,16 +1,11 @@
 //script
 
-//const pDOM = document.querySelectorAll('p');
-
-//console.log('p\'s connected: ', pDOM);
-
-const numbArray = [];
-
-let counterQuery = 1;
-
 //declaring functions
 function pInjecter(){
     let tempNumber = 0;
+
+    //increasing counterQuery
+    counterQuery++;
 
     //tempNumber creation
     tempNumber = Math.floor((Math.random()*20) + 1);
@@ -19,11 +14,14 @@ function pInjecter(){
     //injecting tempNumber into DOM p's
     document.getElementById(`p-${counterQuery}`).innerHTML = tempNumber;
 
-    //increasing query counter
-    counterQuery++;
 };
 
 //working script
+
+
+const numbArray = [];
+
+let counterQuery = 0;
 
 //injecting p's
 for(let i = 0; i < 5; i++){
@@ -35,11 +33,16 @@ setTimeout(() => {
 
     for(let i = 5; i > 0; i--){
 
+        console.log('counterQuery: ', counterQuery);
+
         //adding display-none to p's classlist
-        document.getElementById(`p-${counterQuery}`).classList.add('display-none');
+        document.getElementById(`p-${counterQuery}`).classList.add('d-none');
 
-        
 
-    }    
+        //decreasing counterQuery
+        counterQuery--;
+    };
+    
+    
 
-}, 10000)
+}, 5000)
