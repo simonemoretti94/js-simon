@@ -58,7 +58,7 @@ setTimeout(() => {
 
 }, 10000);
 
-//I made it disappear after 10 seconds 'cause i'm patientless
+//I made it disappear after 10 seconds 'cause i'm out of patience
 
 
 //getting input nodes
