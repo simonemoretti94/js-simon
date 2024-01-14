@@ -117,12 +117,12 @@
 
 /* working sheet */
 
+header{
+    border-bottom: 2px solid var(--white);
+}
+
 h2{
     text-shadow: 3px 1.5px rgb(86, 86, 86);
     word-spacing: 5px;
     letter-spacing: 2.5px;
-}
-
-header{
-    border-bottom: 2px solid var(--white);
 }

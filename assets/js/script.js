@@ -11,6 +11,9 @@ function pInjecter(){
     tempNumber = Math.floor((Math.random()*20) + 1);
     console.log('tempNumber: ', tempNumber);
 
+    //adding tempNumber to numbArray
+    numbArray.push(tempNumber);
+
     //injecting tempNumber into DOM p's
     document.getElementById(`p-${counterQuery}`).innerHTML = tempNumber;
 
@@ -43,6 +46,14 @@ setTimeout(() => {
         counterQuery--;
     };
     
-    
+    //I made them disappear only for fun and make it trickier, instead i would rather use innerHTML = '' in order to clean container
 
-}, 5000)
+    //making input boxes appear
+    const cont2 = document.getElementById('container-2'); 
+    //console.log(cont2.isConnected);
+    cont2.classList.remove('d-none');
+
+
+}, 5000);
+
+
