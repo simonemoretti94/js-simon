@@ -26,6 +26,8 @@ const numbArray = [];
 
 let counterQuery = 0;
 
+let esitoBool = true;
+
 //injecting p's
 for(let i = 0; i < 5; i++){
     pInjecter();
@@ -54,7 +56,9 @@ setTimeout(() => {
     cont2.classList.remove('d-none');
 
 
-}, 5000);
+}, 10000);
+
+//I made it disappear after 10 seconds 'cause i'm patientless
 
 
 //getting input nodes
@@ -65,10 +69,50 @@ const btnSubmit = document.getElementById('btn-submit');
 
 btnSubmit.addEventListener('click',function (e){
 
+    //log numbArray
+    console.log('numbArray log: ', numbArray);
+
+    //declaring array counter
+    arrayCounter = 0;
+
     inputDOM.forEach((element) => {
 
-        element.innerHTML;
+        //logging input value
+        console.log('input innerHTML: ', element.value);
+        let elementVal = Number(element.value);
+
+        if(numbArray[arrayCounter] === elementVal){
+            console.log('TRUE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', elementVal, 'esitobool: ', esitoBool);
+        }
+        else if(isNaN(elementVal)){
+            esitoBool = false;
+            alert(`Il valore identificato alla pos: ${arrayCounter} non è un numero`)
+            console.log('Il valore identificato alla pos: ',arrayCounter, ' non è un numero');
+        }
+        else{
+            esitoBool = false;
+            console.log('FALSE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', elementVal,  'esitobool: ', esitoBool);
+
+        };
+
+        arrayCounter++;
 
     });
 
+    document.getElementById('container-2').classList.add('d-none');
+
+    const h1End = document.getElementById('h1-end');
+
+    
+    
+    if(esitoBool === true){
+        h1End.classList.remove('d-none');
+        h1End.innerHTML = 'Every value matches!';
+    }
+    else{
+        h1End.classList.remove('d-none');
+        h1End.innerHTML = 'Wrong!';
+    }
+    
 });
+
