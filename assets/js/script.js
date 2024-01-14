@@ -56,7 +56,7 @@ setTimeout(() => {
     cont2.classList.remove('d-none');
 
 
-}, 10000);
+}, 5000);
 
 //I made it disappear after 10 seconds 'cause i'm out of patience
 
@@ -116,3 +116,10 @@ btnSubmit.addEventListener('click',function (e){
     
 });
 
+/* other only for style purposes */
+
+function submitF(e){
+
+    document.getElementById('btn-submit').innerHTML = 'click here!';
+
+};
