@@ -15,7 +15,7 @@ function pInjecter(){
     numbArray.push(tempNumber);
 
     //injecting tempNumber into DOM p's
-    document.getElementById(`p-${counterQuery}`).innerHTML = tempNumber;
+    document.getElementById(`p-${counterQuery}`).innerHTML = 'n: ' + tempNumber;
 
 };
 
@@ -99,11 +99,11 @@ btnSubmit.addEventListener('click',function (e){
 
     });
 
+    //making second container appear
     document.getElementById('container-2').classList.add('d-none');
 
+    //connecting h1-end
     const h1End = document.getElementById('h1-end');
-
-    
     
     if(esitoBool === true){
         h1End.classList.remove('d-none');
