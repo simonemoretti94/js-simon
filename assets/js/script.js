@@ -52,7 +52,6 @@ setTimeout(() => {
 
     //making input boxes appear
     const cont2 = document.getElementById('container-2'); 
-    //console.log(cont2.isConnected);
     cont2.classList.remove('d-none');
 
 
@@ -99,19 +98,19 @@ btnSubmit.addEventListener('click',function (e){
 
     });
 
-    //making second container appear
+    //making second container disappear
     document.getElementById('container-2').classList.add('d-none');
 
     //connecting h1-end
     const h1End = document.getElementById('h1-end');
     
     if(esitoBool === true){
-        h1End.classList.remove('d-none');
         h1End.innerHTML = 'Every value matches!';
+        h1End.classList.remove('d-none');
     }
     else{
-        h1End.classList.remove('d-none');
         h1End.innerHTML = 'Wrong!';
+        h1End.classList.remove('d-none');
     }
     
 });
