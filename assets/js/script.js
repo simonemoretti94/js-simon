@@ -19,6 +19,40 @@ function pInjecter(){
 
 };
 
+function verdict(boolean){
+
+     //connecting h1-end
+     const h1End = document.getElementById('h1-end');
+
+    if(esitoBool === true){
+        h1End.innerHTML = 'Every value matches!';
+        h1End.classList.remove('d-none');
+    }
+    else{
+        h1End.innerHTML = 'Wrong!';
+        h1End.classList.remove('d-none');
+    };
+
+};
+
+function evaluatingVal(value){
+
+    if(numbArray[arrayCounter] === value){
+        console.log('TRUE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', value, 'esitobool: ', esitoBool);
+    }
+    else if(isNaN(value)){
+        esitoBool = false;
+        alert(`Il valore identificato alla pos: ${arrayCounter} non è un numero`)
+        console.log('Il valore identificato alla pos: ',arrayCounter, ' non è un numero');
+    }
+    else{
+        esitoBool = false;
+        console.log('FALSE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', value,  'esitobool: ', esitoBool);
+
+    };
+    
+    };
+
 //working script
 
 
@@ -38,7 +72,7 @@ setTimeout(() => {
 
     for(let i = 5; i > 0; i--){
 
-        console.log('counterQuery: ', counterQuery);
+        //console.log('counterQuery: ', counterQuery);
 
         //adding display-none to p's classlist
         document.getElementById(`p-${counterQuery}`).classList.add('d-none');
@@ -80,19 +114,7 @@ btnSubmit.addEventListener('click',function (e){
         console.log('input innerHTML: ', element.value);
         let elementVal = Number(element.value);
 
-        if(numbArray[arrayCounter] === elementVal){
-            console.log('TRUE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', elementVal, 'esitobool: ', esitoBool);
-        }
-        else if(isNaN(elementVal)){
-            esitoBool = false;
-            alert(`Il valore identificato alla pos: ${arrayCounter} non è un numero`)
-            console.log('Il valore identificato alla pos: ',arrayCounter, ' non è un numero');
-        }
-        else{
-            esitoBool = false;
-            console.log('FALSE! array counter: ', arrayCounter, 'numbarray counter: ', numbArray[arrayCounter], 'element value: ', elementVal,  'esitobool: ', esitoBool);
-
-        };
+        evaluatingVal(elementVal);
 
         arrayCounter++;
 
@@ -101,17 +123,7 @@ btnSubmit.addEventListener('click',function (e){
     //making second container disappear
     document.getElementById('container-2').classList.add('d-none');
 
-    //connecting h1-end
-    const h1End = document.getElementById('h1-end');
-    
-    if(esitoBool === true){
-        h1End.innerHTML = 'Every value matches!';
-        h1End.classList.remove('d-none');
-    }
-    else{
-        h1End.innerHTML = 'Wrong!';
-        h1End.classList.remove('d-none');
-    }
+    verdict(esitoBool);
     
 });
 
