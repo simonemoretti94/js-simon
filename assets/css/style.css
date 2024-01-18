@@ -127,6 +127,20 @@ h2{
     letter-spacing: 2.5px;
 }
 
+.container-1, .container-2 {
+    margin-top: 2rem;
+}
+
+.container-1 p{
+    height: 30px;
+}
+
+.container-2 input{
+    height: 30px;
+    border: solid 2px rgb(147, 147, 147);
+    box-shadow: 1.5px 1.5px white;
+}
+
 #btn-submit{
     background-color: rgb(0, 170, 0);
 }
