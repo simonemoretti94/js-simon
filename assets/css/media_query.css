@@ -17,8 +17,9 @@
 
         & input {
 
-            width: calc((100% / 12)* 10);
+            width: calc((100% / 12)* 8);
             margin-top: 1rem;
+            color: blue;
 
         }
     }
