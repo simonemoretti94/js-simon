@@ -131,6 +131,8 @@ btnSubmit.addEventListener('click',function (e){
 
 function submitF(e){
 
-    document.getElementById('btn-submit').innerHTML = 'click here!';
+    const submitBtn = document.getElementById('btn-submit');
+
+    submitBtn.style.scale = "1.1"; submitBtn.innerHTML = 'click here!';
 
 };
